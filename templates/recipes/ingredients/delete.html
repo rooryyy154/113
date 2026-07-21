@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete Ingredient
+{% endblock title %}
+
+{% block content %}
+    <h1>Delete Ingredient</h1>
+    <p>Are you sure you want to delete <strong>"{{ ingredient.name }}"</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm" class="btn btn-danger">
+    </form>
+    <a href="{% url 'ingredient_list' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}
